@@ -1,6 +1,6 @@
 # Table Elements
 
-The easiest way to integrate Laravel Scout or Meilisearch into your frontend. These components will allow you kick-start the development of your next beautiful table UIs, including a blazing-fast UX.
+The easiest way to integrate Laravel Scout or Meilisearch into your frontend. These components will allow you to kick-start the development of your next beautiful table UIs, including a blazing-fast UX.
 
 ## 🐙 Features
 
