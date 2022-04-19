@@ -1,6 +1,5 @@
 import { defineCustomElement } from 'vue'
 import Table from './components/TableV2.ce.vue'
-import './styles/index.css'
 
 // console.log('Table.styles', Table.styles) // ["/* inlined css */"]
 

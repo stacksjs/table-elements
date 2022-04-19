@@ -5,7 +5,7 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    'HelloWorld.ce': typeof import('./components/TableV2.ce.vue')['default']
+    'TableV2.ce': typeof import('./components/TableV2.ce.vue')['default']
   }
 }
 
