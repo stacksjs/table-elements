@@ -1,0 +1,17 @@
+{
+  "cSpell.words": [
+    "Vitesse",
+    "Vite",
+    "vitest",
+    "vueuse",
+    "demi",
+    "antfu",
+    "vitejs",
+    "unplugin",
+    "pnpm"
+  ],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
