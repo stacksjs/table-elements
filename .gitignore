@@ -12,3 +12,6 @@ cypress/downloads
 cypress/fixtures
 cypress/plugins
 cypress/support
+
+# Meilisearch
+data.ms

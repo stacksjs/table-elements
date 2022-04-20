@@ -33,12 +33,17 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@meilisearch/instant-meilisearch": "^0.7.0",
     "@vueuse/core": "8.3.0",
     "vue": "3.2.33"
   },
   "devDependencies": {
     "@antfu/eslint-config": "0.20.6",
     "@babel/types": "7.17.0",
+    "@tailwindcss/aspect-ratio": "0.4.0",
+    "@tailwindcss/forms": "0.5.0",
+    "@tailwindcss/line-clamp": "0.3.1",
+    "@tailwindcss/typography": "0.5.2",
     "@vitebook/client": "0.23.5",
     "@vitebook/core": "0.23.5",
     "@vitebook/markdown-vue": "0.23.5",
