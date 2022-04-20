@@ -9,6 +9,8 @@ const props = defineProps<{
   // sortable?: string -> TODO: determines whether the sorts are displayed, alias sorts
   // filterable?: string -> TODO: determines whether the filters are displayed, alias filters
   // actionable?: string -> TODO: determines whether the "edit"/action button is displayed
+  // perPage?: number -> TODO: determines the items displayed per page
+  // usePagination?: boolean -> TODO: determines whether to display/use the pagination feature
 }>()
 
 const client = new MeiliSearch({
@@ -17,7 +19,7 @@ const client = new MeiliSearch({
 })
 
 // reactive state
-const index = $ref(client.index(props.index))
+let index = $ref(client.index(props.index))
 let sort = $ref('')
 
 const isSorted = $computed(() => sort !== '')
@@ -35,7 +37,8 @@ async function search(q: string) {
   // eslint-disable-next-line no-console
   console.log('index before is', index)
 
-  await index.search(q)
+  index = await index.search(q)
+
   // eslint-disable-next-line no-console
   console.log('index after is', index)
 }
