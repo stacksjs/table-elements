@@ -6,7 +6,9 @@ const props = defineProps<{
   index: string
   cols: string
   // searchable?: string -> TODO: determines whether the search input is displayed
+  // sorts?: string -> TODO: determines whether the sorts are displayed, e.g. "name, price, created_at"
   // sortable?: string -> TODO: determines whether the sorts are displayed, alias sorts
+  // filters?: string -> TODO: determines whether the filters are displayed, e.g. "traits_Head, traits_Body, traits_Background"
   // filterable?: string -> TODO: determines whether the filters are displayed, alias filters
   // actionable?: string -> TODO: determines whether the "edit"/action button is displayed
   // perPage?: number -> TODO: determines the items displayed per page
@@ -18,13 +20,16 @@ const client = new MeiliSearch({
   apiKey: '',
 })
 
+const index = $ref(client.index(props.index))
+
+let settings = $ref()
+let results = $ref()
+
 // reactive state
-let index = $ref(client.index(props.index))
 let sort = $ref('')
 
 const isSorted = $computed(() => sort !== '')
 const columns = $computed(() => props.cols.split(','))
-const settings = $computed(() => getSettings())
 
 function toggleSort(order: string) {
   if (isSorted)
@@ -37,27 +42,26 @@ async function search(q: string) {
   // eslint-disable-next-line no-console
   console.log('index before is', index)
 
-  index = await index.search(q)
+  results = await index.search(q)
 
   // eslint-disable-next-line no-console
   console.log('index after is', index)
 }
 
 async function getSettings() {
-  return await index.getSettings()
+  settings = await index.getSettings()
 }
 
 onMounted(async() => {
   await search('11')
+  await getSettings
 
-  // // eslint-disable-next-line no-console
-  // console.log('rows', rows)
-  // eslint-disable-next-line no-console
-  console.log('settings', await settings)
   // eslint-disable-next-line no-console
   console.log('props', props)
   // eslint-disable-next-line no-console
   console.log('columns', columns)
+  // eslint-disable-next-line no-console
+  console.log('settings', settings)
 })
 </script>
 
