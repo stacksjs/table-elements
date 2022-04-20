@@ -7,9 +7,9 @@ const props = defineProps<{
   cols: string
   // searchable?: string -> TODO: determines whether the search input is displayed
   // sorts?: string -> TODO: determines whether the sorts are displayed, e.g. "name, price, created_at"
-  // sortable?: string -> TODO: determines whether the sorts are displayed, alias sorts
+  // sortable?: string -> TODO: determines whether the sorts are displayed, alias sorts, useSorts
   // filters?: string -> TODO: determines whether the filters are displayed, e.g. "traits_Head, traits_Body, traits_Background"
-  // filterable?: string -> TODO: determines whether the filters are displayed, alias filters
+  // filterable?: string -> TODO: determines whether the filters are displayed, alias filters, useFilters
   // actionable?: string -> TODO: determines whether the "edit"/action button is displayed
   // perPage?: number -> TODO: determines the items displayed per page
   // usePagination?: boolean -> TODO: determines whether to display/use the pagination feature
