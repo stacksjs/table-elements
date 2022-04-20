@@ -33,7 +33,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@meilisearch/instant-meilisearch": "^0.7.0",
+    "@meilisearch/instant-meilisearch": "0.7.0",
     "@vueuse/core": "8.3.0",
     "vue": "3.2.33"
   },
