@@ -1,0 +1,13 @@
+{
+  "autorun": true,
+  "autokill": true,
+  "terminals": [
+    {
+      "name": "Meilisearch",
+      "description": "Starts Meilisearch.",
+      "open": true,
+      "focus": false,
+      "commands": ["cd web && cd nakednfts-api", "meilisearch"]
+    }
+  ]
+}

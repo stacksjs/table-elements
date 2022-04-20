@@ -1,14 +1,19 @@
 <script setup lang="ts">
-import { instantMeiliSearch } from '@meilisearch/instant-meilisearch'
+import { MeiliSearch } from 'meilisearch'
 
 interface Props {
   host: string
+  index: string
 }
 
 const props = defineProps<Props>()
 
 // reactive state
-const searchClient = $ref(instantMeiliSearch(props.host, ''))
+const client = $ref(new MeiliSearch({
+  host: props.host,
+  apiKey: '',
+}))
+const index = $ref(client.index(props.index))
 let sort = $ref('')
 const isSorted = $computed(() => sort !== '')
 
@@ -20,9 +25,10 @@ function toggleSort(order: string) {
 }
 
 // lifecycle hooks
-onMounted(() => {
+onMounted(async() => {
+  const search = await index.search('hood')
   // eslint-disable-next-line no-console
-  console.log('sc', searchClient)
+  console.log(search)
 })
 </script>
 

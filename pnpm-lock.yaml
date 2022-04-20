@@ -3,7 +3,6 @@ lockfileVersion: 5.3
 specifiers:
   '@antfu/eslint-config': 0.20.6
   '@babel/types': 7.17.0
-  '@meilisearch/instant-meilisearch': ^0.7.0
   '@tailwindcss/aspect-ratio': 0.4.0
   '@tailwindcss/forms': 0.5.0
   '@tailwindcss/line-clamp': 0.3.1
@@ -21,6 +20,7 @@ specifiers:
   eslint: 8.13.0
   eslint-plugin-cypress: 2.12.1
   https-localhost: 4.7.1
+  meilisearch: 0.25.0
   pnpm: 6.32.9
   postcss: 8.4.12
   postcss-import: 14.1.0
@@ -37,8 +37,8 @@ specifiers:
   vue-tsc: 0.34.7
 
 dependencies:
-  '@meilisearch/instant-meilisearch': 0.7.0
   '@vueuse/core': 8.3.0_vue@3.2.33
+  meilisearch: 0.25.0
   vue: 3.2.33
 
 devDependencies:
@@ -272,14 +272,6 @@ packages:
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
-
-  /@meilisearch/instant-meilisearch/0.7.0:
-    resolution: {integrity: sha512-WseAYv+fw/tKVsRpFAal9PQmfE0aCYUv1VFTbpK14QyKY4jFUgR7CGbpHcdsagxunmgTkU08NKixUmsk1Z60Iw==}
-    dependencies:
-      meilisearch: 0.25.0
-    transitivePeerDependencies:
-      - encoding
-    dev: false
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
