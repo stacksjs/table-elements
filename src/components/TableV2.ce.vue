@@ -4,6 +4,11 @@ import { MeiliSearch } from 'meilisearch'
 interface Props {
   host: string
   index: string
+  cols: string
+  // searchable?: string -> TODO: determines whether the search input is displayed
+  // sortable?: string -> TODO: determines whether the sorts are displayed, alias sorts
+  // filterable?: string -> TODO: determines whether the filters are displayed, alias filters
+  // actionable?: string -> TODO: determines whether the "edit"/action button is displayed
 }
 
 const props = defineProps<Props>()
@@ -15,7 +20,9 @@ const client = $ref(new MeiliSearch({
 }))
 const index = $ref(client.index(props.index))
 let sort = $ref('')
+
 const isSorted = $computed(() => sort !== '')
+const columns = $computed(() => props.cols.split(','))
 
 function toggleSort(order: string) {
   if (isSorted)
@@ -26,9 +33,13 @@ function toggleSort(order: string) {
 
 // lifecycle hooks
 onMounted(async() => {
-  const search = await index.search('hood')
+  const search = await index.getSettings()
   // eslint-disable-next-line no-console
   console.log(search)
+  // eslint-disable-next-line no-console
+  console.log('props', props)
+  // eslint-disable-next-line no-console
+  console.log('columns', columns)
 })
 </script>
 
@@ -56,45 +67,12 @@ onMounted(async() => {
             <table class="min-w-full divide-y divide-gray-300">
               <thead class="bg-gray-50">
                 <tr>
-                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" @click="toggleSort('name')">
+                  <th v-for="col in columns" :key="col" scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" @click="toggleSort(col)">
                     <a href="#" class="group inline-flex">
-                      Name
+                      {{ col }}
                       <span :class="sort === 'name' ? `invisible text-gray-400 group-hover:visible group-focus:visible` : `bg-gray-200 text-gray-900 group-hover:bg-gray-300`" class="ml-2 flex-none rounded">
                         <!-- Heroicon name: solid/chevron-down -->
                         <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                      </span>
-                    </a>
-                  </th>
-                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" @click="toggleSort('title')">
-                    <a href="#" class="group inline-flex">
-                      Title
-                      <span :class="sort === 'title' ? `invisible text-gray-400 group-hover:visible group-focus:visible` : `bg-gray-200 text-gray-900 group-hover:bg-gray-300`" class="ml-2 flex-none rounded">
-                        <!-- Heroicon name: solid/chevron-down -->
-                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                      </span>
-                    </a>
-                  </th>
-                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" @click="toggleSort('email')">
-                    <a href="#" class="group inline-flex">
-                      Email
-                      <span :class="sort === 'email' ? `invisible text-gray-400 group-hover:visible group-focus:visible` : `bg-gray-200 text-gray-900 group-hover:bg-gray-300`" class="ml-2 flex-none rounded">
-                        <!-- Heroicon name: solid/chevron-down -->
-                        <svg class="invisible ml-2 h-5 w-5 flex-none rounded text-gray-400 group-hover:visible group-focus:visible" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                      </span>
-                    </a>
-                  </th>
-                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" @click="toggleSort('role')">
-                    <a href="#" class="group inline-flex">
-                      Role
-                      <span :class="sort === 'role' ? `invisible text-gray-400 group-hover:visible group-focus:visible` : `bg-gray-200 text-gray-900 group-hover:bg-gray-300`" class="ml-2 flex-none rounded">
-                        <!-- Heroicon name: solid/chevron-down -->
-                        <svg class="invisible ml-2 h-5 w-5 flex-none rounded text-gray-400 group-hover:visible group-focus:visible" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                           <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                         </svg>
                       </span>
