@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { MeiliSearch } from 'meilisearch'
 
-interface Props {
+const props = defineProps<{
   host: string
   index: string
   cols: string
@@ -9,20 +9,20 @@ interface Props {
   // sortable?: string -> TODO: determines whether the sorts are displayed, alias sorts
   // filterable?: string -> TODO: determines whether the filters are displayed, alias filters
   // actionable?: string -> TODO: determines whether the "edit"/action button is displayed
-}
+}>()
 
-const props = defineProps<Props>()
-
-// reactive state
-const client = $ref(new MeiliSearch({
+const client = new MeiliSearch({
   host: props.host,
   apiKey: '',
-}))
+})
+
+// reactive state
 const index = $ref(client.index(props.index))
 let sort = $ref('')
 
 const isSorted = $computed(() => sort !== '')
 const columns = $computed(() => props.cols.split(','))
+const settings = $computed(() => getSettings())
 
 function toggleSort(order: string) {
   if (isSorted)
@@ -31,11 +31,26 @@ function toggleSort(order: string) {
     sort = order
 }
 
-// lifecycle hooks
-onMounted(async() => {
-  const search = await index.getSettings()
+async function search(q: string) {
   // eslint-disable-next-line no-console
-  console.log(search)
+  console.log('index before is', index)
+
+  await index.search(q)
+  // eslint-disable-next-line no-console
+  console.log('index after is', index)
+}
+
+async function getSettings() {
+  return await index.getSettings()
+}
+
+onMounted(async() => {
+  await search('11')
+
+  // // eslint-disable-next-line no-console
+  // console.log('rows', rows)
+  // eslint-disable-next-line no-console
+  console.log('settings', await settings)
   // eslint-disable-next-line no-console
   console.log('props', props)
   // eslint-disable-next-line no-console
