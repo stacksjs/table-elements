@@ -2,21 +2,23 @@
 import { MeiliSearch } from 'meilisearch'
 
 const props = defineProps<{
-  host: string
+  host?: string // host, source, src are all aliases
+  source?: string
+  src?: string
   index: string
   cols: string
   // searchable?: string -> TODO: determines whether the search input is displayed
-  // sorts?: string -> TODO: determines whether the sorts are displayed, e.g. "name, price, created_at"
-  // sortable?: string -> TODO: determines whether the sorts are displayed, alias sorts, useSorts
-  // filters?: string -> TODO: determines whether the filters are displayed, e.g. "traits_Head, traits_Body, traits_Background"
-  // filterable?: string -> TODO: determines whether the filters are displayed, alias filters, useFilters
+  // sorts?: string -> TODO: determines whether the sorts are displayed, e.g. "name, price, created_at" - auto could become a setting as well
+  // sortable?: string -> TODO: determines whether the sorts are displayed, alias sorts, useSorts - auto could become a setting as well
+  // filters?: string -> TODO: determines whether the filters are displayed, e.g. "traits_Head, traits_Body, traits_Background"- auto could become a setting as well
+  // filterable?: string -> TODO: determines whether the filters are displayed, alias filters, useFilters- auto could become a setting as well
   // actionable?: string -> TODO: determines whether the "edit"/action button is displayed
   // perPage?: number -> TODO: determines the items displayed per page
   // usePagination?: boolean -> TODO: determines whether to display/use the pagination feature
 }>()
 
 const client = new MeiliSearch({
-  host: props.host,
+  host: props.source ?? props.host ?? props.src,
   apiKey: '',
 })
 
