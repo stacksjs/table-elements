@@ -24,8 +24,8 @@ const client = new MeiliSearch({
 })
 
 const index = $ref(client.index(props.index))
-let settings = $ref()
-let results = $ref()
+const settings = $ref()
+// const results = $ref()
 let sort = $ref('')
 
 const isSorted = $computed(() => sort !== '')
@@ -42,14 +42,14 @@ async function search(q: string) {
   // eslint-disable-next-line no-console
   console.log('index before is', index)
 
-  results = await index.search(q)
+  // results = await index.search(q)
 
   // eslint-disable-next-line no-console
   console.log('index after is', index)
 }
 
 async function getSettings() {
-  settings = await index.getSettings()
+  // settings = await index.getSettings()
 }
 
 onMounted(async() => {

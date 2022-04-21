@@ -8,11 +8,16 @@
     <title>Elements Playground</title>
   </head>
   <body>
-    <table-v2
+    <table-configure
       source="http://127.0.0.1:7700"
       index="hoodratz"
+      query="123"
+    ></table-configure>
+
+    <table-v2
       cols="name, absolute_rarity, collection_published_at, created_at, edition"
     ></table-v2>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
