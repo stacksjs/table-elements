@@ -2,9 +2,9 @@
 import { MeiliSearch } from 'meilisearch'
 
 const props = defineProps<{
-  host?: string // host, source, src are all aliases
   source?: string
-  src?: string
+  host?: string // alias of `source`
+  src?: string // alias of `source`
   index: string
   cols: string
   // searchable?: string -> TODO: determines whether the search input is displayed
