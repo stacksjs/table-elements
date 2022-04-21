@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { MeiliSearch } from 'meilisearch'
+// import { MeiliSearch } from 'meilisearch'
+// import { useStorage } from '@vueuse/core'
 
 const props = defineProps<{
   source?: string
@@ -17,13 +18,6 @@ const props = defineProps<{
   // usePagination?: boolean -> TODO: determines whether to display/use the pagination feature
 }>()
 
-const host = props.source ?? props.host ?? props.src ?? ''
-const client = new MeiliSearch({
-  host,
-  apiKey: '',
-})
-
-const index = $ref(client.index(props.index))
 const settings = $ref()
 // const results = $ref()
 let sort = $ref('')
@@ -37,32 +31,6 @@ function toggleSort(order: string) {
   else
     sort = order
 }
-
-async function search(q: string) {
-  // eslint-disable-next-line no-console
-  console.log('index before is', index)
-
-  // results = await index.search(q)
-
-  // eslint-disable-next-line no-console
-  console.log('index after is', index)
-}
-
-async function getSettings() {
-  // settings = await index.getSettings()
-}
-
-onMounted(async() => {
-  await search('11')
-  await getSettings
-
-  // eslint-disable-next-line no-console
-  console.log('props', props)
-  // eslint-disable-next-line no-console
-  console.log('columns', columns)
-  // eslint-disable-next-line no-console
-  console.log('settings', settings)
-})
 </script>
 
 <template>
