@@ -5,7 +5,7 @@ const props = defineProps<{
   source?: string
   host?: string // alias of `source`
   src?: string // alias of `source`
-  index: string // TODO: should be optional
+  index?: string // TODO: in order to be fully optional, we need to implement a "indices component" which is triggered prior to rendering a specific index's data
   cols?: string
   query?: string
   sorts?: string
@@ -24,7 +24,7 @@ const state = useStorage('table-source', {
 
 const client = getSearchClient()
 const index = client.index(state.index)
-state.settings = await index.getSettings()
+state.value.settings = await index.getSettings()
 
 function getSearchClient() {
   return new MeiliSearch({

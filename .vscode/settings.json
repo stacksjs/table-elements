@@ -14,7 +14,8 @@
     "destructurable",
     "pausable",
     "antfu",
-    "vitebook"
+    "vitebook",
+    "heroicon"
   ],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {

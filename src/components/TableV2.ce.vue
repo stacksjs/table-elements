@@ -6,7 +6,7 @@ const props = defineProps<{
   source?: string
   host?: string // alias of `source`
   src?: string // alias of `source`
-  index: string
+  index?: string
   cols: string
   // searchable?: string -> TODO: determines whether the search input is displayed
   // sorts?: string -> TODO: determines whether the sorts are displayed, e.g. "name, price, created_at" - auto could become a setting as well
@@ -18,8 +18,8 @@ const props = defineProps<{
   // usePagination?: boolean -> TODO: determines whether to display/use the pagination feature
 }>()
 
-const settings = $ref()
-// const results = $ref()
+// TODO: props overrules table-configure shared state
+
 let sort = $ref('')
 
 const isSorted = $computed(() => sort !== '')
