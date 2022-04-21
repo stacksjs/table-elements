@@ -21,16 +21,24 @@ Read more about these features in their respective [docs](https://meema.xyz/docs
 It's incredibly easy to use a Web Components within your own project. Check out the `index.html` to get an idea how it can be done.
 
 ```html
-<!-- the following element props are required to be set to render your table -->
-<table-v2 host="127.0.0.1:7700" index="collections" cols="name, collection_published_at, created_at" />
+<!-- the following props are required to be set either on this `table-configure` or `table-v2 element` -->
+<table-configure
+  source="127.0.0.1:7700"
+  index="collections"
+  cols="name, collection_published_at, created_at"
+/>
+
+<table-v2 />
 
 <!-- optional props -->
-<table-v2 searchable="true" />
-<table-v2 sorts="name, price, created_at" />
-<table-v2 filters="traits_Head, traits_Body, traits_Background" />
-<table-v2 actionable="true" />
-<table-v2 per-page="20" />
-<table-v2 use-pagination="true" />
+<table-v2
+  searchable="true"
+  sorts="name, price, created_at"
+  filters="traits_Head, traits_Body, traits_Background"
+  actionable="true"
+  per-page="20"
+  use-pagination="true"
+/>
 ```
 
 ## 🖥️ Browsers
