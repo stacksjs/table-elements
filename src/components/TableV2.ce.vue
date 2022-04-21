@@ -18,18 +18,14 @@ const props = defineProps<{
 }>()
 
 const host = props.source ?? props.host ?? props.src ?? ''
-
 const client = new MeiliSearch({
   host,
   apiKey: '',
 })
 
 const index = $ref(client.index(props.index))
-
 let settings = $ref()
 let results = $ref()
-
-// reactive state
 let sort = $ref('')
 
 const isSorted = $computed(() => sort !== '')
