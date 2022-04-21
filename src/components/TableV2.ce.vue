@@ -3,11 +3,12 @@
 // import { useStorage } from '@vueuse/core'
 
 const props = defineProps<{
-  source?: string
+  source?: string // TODO: should make sure at least one of these three is required to be set
   host?: string // alias of `source`
   src?: string // alias of `source`
-  index?: string
-  cols: string
+  index?: string // TODO: in order to be fully optional, we need to implement a "indices component" which is triggered prior to rendering a specific index's data
+  columns: string // is used as the "table heads"/titles based on the same order the `string` was provided in
+  cols: string // alias of `columns`
   // searchable?: string | boolean -> TODO: determines whether the search input is displayed. If string is provided, use as placeholder. Add useSearch alias?. Defaults to `true`
   // sortable?: string | boolean -> TODO: determines whether the sorts are displayed, e.g. "name, price, created_at". `auto` could become a "setting" option as well. Alias: sorts, useSorts. Defaults to `true`
   // filterable?: string -> TODO: determines whether the filters are displayed, , e.g. "traits_Head, traits_Body, traits_Background". `auto` could become a "setting" option as well. Alias: filters, useFilters- auto could become a setting as well. Defaults to `true`
