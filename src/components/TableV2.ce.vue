@@ -15,6 +15,8 @@ const props = defineProps<{
   // filterable?: string -> TODO: determines whether the filters are displayed, alias filters, useFilters- auto could become a setting as well
   // actionable?: string -> TODO: determines whether the "edit"/action button is displayed
   // perPage?: number -> TODO: determines the items displayed per page
+  // title?: string -> TODO: defaults to capitalized $indexName
+  // subTitle?: string -> TODO: defaults to "A list of all the $pluralVersionOfIndexName in your database including their $columns[0], $columns[1], $columns[2] and $columns[3]." - based on amount of cols
   // usePagination?: boolean -> TODO: determines whether to display/use the pagination feature
 }>()
 
