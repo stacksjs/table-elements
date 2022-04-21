@@ -4,12 +4,15 @@ The easiest way to integrate Laravel Scout or Meilisearch into your frontend. Th
 
 ## 🐙 Features
 
-This cross-framework (React, Vue, Svelte, etc.) component library is compatible.
+This cross-framework (React, Vue, Svelte, Angular, HTML, etc.) component library is compatible for the following features:
 
 - `<table-v2 />`
   - quickly & simply develop a highly-configurable table UI without worrying about the backend
   - "facet filtering" & "table head sorting" natively built in
   - Meilisearch & Laravel Scout API compatible
+
+- `<table-configure />`
+  - simple way to configure the table in a HTML semantic fashion
 
 Read more about these features in their respective [docs](https://meema.xyz/docs).
 
