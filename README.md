@@ -4,7 +4,7 @@ The easiest way to integrate Laravel Scout or Meilisearch into your frontend. Th
 
 ## 🐙 Features
 
-This cross-framework (React, Vue, Svelte, Angular, HTML, etc.) component library is compatible for the following features:
+This cross-framework compatible (React, Vue, Svelte, Angular, HTML, etc.) web component library comes with the following features & "improvements" to the table element:
 
 - `<table-v2 />`
   - quickly & simply develop a highly-configurable table UI without worrying about the backend
