@@ -8,16 +8,14 @@ const props = defineProps<{
   src?: string // alias of `source`
   index?: string
   cols: string
-  // searchable?: string -> TODO: determines whether the search input is displayed
-  // sorts?: string -> TODO: determines whether the sorts are displayed, e.g. "name, price, created_at" - auto could become a setting as well
-  // sortable?: string -> TODO: determines whether the sorts are displayed, alias sorts, useSorts - auto could become a setting as well
-  // filters?: string -> TODO: determines whether the filters are displayed, e.g. "traits_Head, traits_Body, traits_Background"- auto could become a setting as well
-  // filterable?: string -> TODO: determines whether the filters are displayed, alias filters, useFilters- auto could become a setting as well
-  // actionable?: string -> TODO: determines whether the "edit"/action button is displayed
-  // perPage?: number -> TODO: determines the items displayed per page
-  // title?: string -> TODO: defaults to capitalized $indexName
+  // searchable?: string | boolean -> TODO: determines whether the search input is displayed. If string is provided, use as placeholder. Add useSearch alias?. Defaults to `true`
+  // sortable?: string | boolean -> TODO: determines whether the sorts are displayed, e.g. "name, price, created_at". `auto` could become a "setting" option as well. Alias: sorts, useSorts. Defaults to `true`
+  // filterable?: string -> TODO: determines whether the filters are displayed, , e.g. "traits_Head, traits_Body, traits_Background". `auto` could become a "setting" option as well. Alias: filters, useFilters- auto could become a setting as well. Defaults to `true`
+  // actionable?: string | boolean -> TODO: determines whether the "edit"/action button is displayed. Future version should allow for more configuration here
+  // title?: string -> TODO: defaults to capitalized $indexName. Alias: useTitle, defaults to `true`
   // subTitle?: string -> TODO: defaults to "A list of all the $pluralVersionOfIndexName in your database including their $columns[0], $columns[1], $columns[2] and $columns[3]." - based on amount of cols
-  // usePagination?: boolean -> TODO: determines whether to display/use the pagination feature
+  // perPage?: number -> TODO: determines the items displayed per page. Defaults to 20.
+  // usePagination?: boolean -> TODO: determines whether to display/use the pagination feature. Defaults to `true`
 }>()
 
 // TODO: props overrules table-configure shared state
