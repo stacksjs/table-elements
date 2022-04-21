@@ -17,8 +17,10 @@ const props = defineProps<{
   // usePagination?: boolean -> TODO: determines whether to display/use the pagination feature
 }>()
 
+const host = props.source ?? props.host ?? props.src ?? ''
+
 const client = new MeiliSearch({
-  host: props.source ?? props.host ?? props.src,
+  host,
   apiKey: '',
 })
 
