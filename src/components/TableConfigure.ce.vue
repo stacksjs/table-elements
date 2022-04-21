@@ -12,40 +12,33 @@ const props = defineProps<{
   filters?: string
 }>()
 
-const state = setInitialState()
-const host = getHost()
+const state = useStorage('table-source', {
+  host: props.source ?? props.host ?? props.src,
+  index: props.index,
+  cols: props.cols,
+  query: props.query,
+  sorts: props.sorts,
+  filters: props.filters,
+  settings: '',
+})
+
 const client = getSearchClient()
-const index = client.index(props.index)
-const settings = await getSettings()
-
-function setInitialState() {
-  if (localStorage['table-store'])
-    return useStorage('table-store', localStorage['table-store'])
-
-  return useStorage('table-store', props)
-}
-
-function getHost() {
-  if (props.source ?? props.host ?? props.src)
-    return props.source ?? props.host ?? props.src
-
-  return state.source ?? state.host ?? state.src ?? ''
-}
+const index = client.index(state.index)
+state.settings = await index.getSettings()
 
 function getSearchClient() {
   return new MeiliSearch({
-    host,
+    host: state.host,
     apiKey: '',
   })
-}
-
-async function getSettings() {
-  return index.getSettings()
 }
 
 // eslint-disable-next-line no-console
 console.log('settings is', settings)
 state.settings = settings
+
+// eslint-disable-next-line no-console
+console.log('state is', state)
 </script>
 
 <!-- Workaround for: "Component is missing template or render function" -->
