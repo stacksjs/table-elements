@@ -7,7 +7,6 @@ const props = defineProps<{
   src?: string // alias of `source`
   index?: string // TODO: in order to be fully optional, we need to implement a "indices component" which is triggered prior to rendering a specific index's data
   columns: string // is used as the "table heads"/titles based on the same order the `string` was provided in
-  cols: string // alias of `columns`
   // searchable?: string | boolean -> TODO: determines whether the search input is displayed. If string is provided, use as placeholder. Add useSearch alias?. Defaults to `true`
   // sortable?: string | boolean -> TODO: determines whether the sorts are displayed, e.g. "name, price, created_at". `auto` could become a "setting" option as well. Alias: sorts, useSorts. Defaults to `true`
   sorts: string
@@ -25,27 +24,46 @@ const props = defineProps<{
 const state = useStorage('table-source', {
   host: props.source ?? props.host ?? props.src,
   index: props.index,
-  cols: props.cols,
+  columns: props.columns,
   query: props.query,
   sorts: props.sorts,
   filters: props.filters,
   settings: '',
+  results: [],
 })
 
 const client = getSearchClient()
-const index = client.index(state.index)
-state.value.settings = await index.getSettings()
+const index = client.index(state.value.index)
+
+console.log(index)
+
+onMounted(async() => {
+  state.value.settings = await index.getSettings()
+  await search('')
+  // eslint-disable-next-line no-console
+
+  // eslint-disable-next-line no-console
+  // console.log('props', props)
+  // eslint-disable-next-line no-console
+  // console.log('columns', columns)
+  // eslint-disable-next-line no-console
+  // console.log('settings', settings)
+})
 
 function getSearchClient() {
   return new MeiliSearch({
-    host: state.host,
+    host: state.value.host,
     apiKey: '',
   })
 }
 
-// eslint-disable-next-line no-console
-console.log('settings is', settings)
-state.settings = settings
+async function search(q: string) {
+  console.log(state.value.index)
+
+  state.value.results = await index.search(q)
+  // eslint-disable-next-line no-console
+  console.log('index after is', state.value.index)
+}
 
 // eslint-disable-next-line no-console
 console.log('state is', state)

@@ -9,7 +9,6 @@ const props = defineProps<{
   src?: string // alias of `source`
   index?: string // TODO: in order to be fully optional, we need to implement a "indices component" which is triggered prior to rendering a specific index's data
   columns: string // is used as the "table heads"/titles based on the same order the `string` was provided in
-  cols: string // alias of `columns`
   searchable?: string | boolean // -> TODO: determines whether the search input is displayed. If string is provided, use as placeholder. Add useSearch alias?. Defaults to `true`
   sortable?: string | boolean
   // filterable?: string -> TODO: determines whether the filters are displayed, , e.g. "traits_Head, traits_Body, traits_Background". `auto` could become a "setting" option as well. Alias: filters, useFilters- auto could become a setting as well. Defaults to `true`
@@ -22,10 +21,12 @@ const props = defineProps<{
 
 // TODO: props overrules table-configure shared state
 
+const state = useStorage('table-source')
+
 let sort = $ref('')
 
 const isSorted = $computed(() => sort !== '')
-const columns = $computed(() => props.cols.split(', '))
+const columns = $computed(() => props.columns.split(', '))
 
 function toggleSort(order: string) {
   if (isSorted)

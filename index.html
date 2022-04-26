@@ -11,11 +11,14 @@
     <table-configure
       source="127.0.0.1:7700"
       index="hoodratz"
-      query="11"
+      query=""
+      columns="name, absolute_rarity, collection_published_at, created_at, edition"
+      sorts="false"
+      filters="false"
     ></table-configure>
 
     <table-v2
-      cols="name, absolute_rarity, collection_published_at, created_at, edition"
+    columns="name, absolute_rarity, collection_published_at, created_at, edition"
     ></table-v2>
 
     <script type="module" src="/src/main.ts"></script>
