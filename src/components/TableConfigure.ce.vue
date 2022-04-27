@@ -37,7 +37,7 @@ const index = client.index(state.value.index)
 
 console.log(index)
 
-onMounted(async() => {
+onMounted(async () => {
   state.value.settings = await index.getSettings()
   await search('')
   // eslint-disable-next-line no-console
