@@ -5,7 +5,7 @@ specifiers:
   '@babel/types': 7.17.0
   '@tailwindcss/aspect-ratio': 0.4.0
   '@tailwindcss/forms': 0.5.0
-  '@tailwindcss/line-clamp': 0.3.1
+  '@tailwindcss/line-clamp': 0.4.0
   '@tailwindcss/typography': 0.5.2
   '@vitejs/plugin-vue': 2.3.1
   '@vue/compiler-sfc': 3.2.33
@@ -16,7 +16,7 @@ specifiers:
   eslint-plugin-cypress: 2.12.1
   https-localhost: 4.7.1
   meilisearch: 0.25.0
-  pnpm: 6.32.10
+  pnpm: 6.32.11
   postcss: 8.4.12
   postcss-import: 14.1.0
   prettier: 2.6.2
@@ -41,7 +41,7 @@ devDependencies:
   '@babel/types': 7.17.0
   '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.0.24
   '@tailwindcss/forms': 0.5.0_tailwindcss@3.0.24
-  '@tailwindcss/line-clamp': 0.3.1_tailwindcss@3.0.24
+  '@tailwindcss/line-clamp': 0.4.0_tailwindcss@3.0.24
   '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.24
   '@vitejs/plugin-vue': 2.3.1_vite@2.9.6+vue@3.2.33
   '@vue/compiler-sfc': 3.2.33
@@ -50,7 +50,7 @@ devDependencies:
   eslint: 8.14.0
   eslint-plugin-cypress: 2.12.1_eslint@8.14.0
   https-localhost: 4.7.1
-  pnpm: 6.32.10
+  pnpm: 6.32.11
   postcss: 8.4.12
   postcss-import: 14.1.0_postcss@8.4.12
   prettier: 2.6.2
@@ -310,8 +310,8 @@ packages:
       tailwindcss: 3.0.24
     dev: true
 
-  /@tailwindcss/line-clamp/0.3.1_tailwindcss@3.0.24:
-    resolution: {integrity: sha512-pNr0T8LAc3TUx/gxCfQZRe9NB2dPEo/cedPHzUGIPxqDMhgjwNm6jYxww4W5l0zAsAddxr+XfZcqttGiFDgrGg==}
+  /@tailwindcss/line-clamp/0.4.0_tailwindcss@3.0.24:
+    resolution: {integrity: sha512-HQZo6gfx1D0+DU3nWlNLD5iA6Ef4JAXh0LeD8lOGrJwEDBwwJNKQza6WoXhhY1uQrxOuU8ROxV7CqiQV4CoiLw==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
@@ -3473,8 +3473,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm/6.32.10:
-    resolution: {integrity: sha512-1+TscklAKWvI6iNY1cVfRsHY9h5dgarHF3zYfg+yVyaS270uvKlQKXBnaX6T6YGXNGWNXqWhDUS9EIzKCDs7Dw==}
+  /pnpm/6.32.11:
+    resolution: {integrity: sha512-KIb3ImAEGl03aJNy0pai7J0mWn52GJwRrUllxUZwibhLdUoeOuDjXhNSgRxxW9BH2gR91b3UadxzdAvhehmM8w==}
     engines: {node: '>=12.17'}
     hasBin: true
     dev: true
