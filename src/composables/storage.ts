@@ -1,2 +1,11 @@
-// these APIs are auto-imported from @vueuse/core
-export const tableStorage = useStorage()
+// the useStorage API is auto-imported from @vueuse/core
+
+// TODO: this needs to become the data structure we accept for the search request
+const data: Object = {
+    sorts: [],
+    filters: [],
+    query: null,
+    perPage: 15,
+};
+
+export const state = useStorage('table-store', data)
