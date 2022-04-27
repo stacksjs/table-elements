@@ -15,7 +15,8 @@
     "pausable",
     "antfu",
     "vitebook",
-    "heroicon"
+    "heroicon",
+    "composables"
   ],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
