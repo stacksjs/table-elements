@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Pagination from './Pagination.vue'
 // import { MeiliSearch } from 'meilisearch'
 // import { useStorage } from '@vueuse/core'
 
@@ -116,10 +115,9 @@ function toggleSort(order: string) {
       </div>
     </div>
     <Pagination v-if="usePagination" />
-    <!-- This example requires Tailwind CSS v2.0+ -->
   </div>
 </template>
 
-<style >
+<style>
 @import "../styles/index.css";
 </style>
