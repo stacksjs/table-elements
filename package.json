@@ -1,7 +1,7 @@
 {
   "name": "table-elements",
   "version": "0.0.0",
-  "packageManager": "pnpm@6.32.11",
+  "packageManager": "pnpm@7.0.1",
   "description": "The easiest way to work with tables. Especially when working with Meilisearch or Laravel Scout.",
   "keywords": [
     "web-components",
@@ -51,7 +51,7 @@
     "eslint": "8.14.0",
     "eslint-plugin-cypress": "2.12.1",
     "https-localhost": "4.7.1",
-    "pnpm": "6.32.11",
+    "pnpm": "7.0.1",
     "postcss": "8.4.12",
     "postcss-import": "14.1.0",
     "prettier": "2.6.2",

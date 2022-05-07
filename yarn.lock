@@ -3302,10 +3302,10 @@ pluralize@^8.0.0:
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
   integrity sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==
 
-pnpm@6.32.11:
-  version "6.32.11"
-  resolved "https://registry.yarnpkg.com/pnpm/-/pnpm-6.32.11.tgz#cc60fcbfef83f7d56d12f6c2084b5194bdff1ffb"
-  integrity sha512-KIb3ImAEGl03aJNy0pai7J0mWn52GJwRrUllxUZwibhLdUoeOuDjXhNSgRxxW9BH2gR91b3UadxzdAvhehmM8w==
+pnpm@7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/pnpm/-/pnpm-7.0.1.tgz#f3b5039dda62f0498a214b4fc8d872336c4b262d"
+  integrity sha512-jDXatNQpx+KYoCg0sSEBj4ryS8dIfo05TkhH5GOyi0ClhmkdmdHr2PgbReQyzZzuQpKWefCAvwOB8PxE1tgQNg==
 
 postcss-import@14.1.0:
   version "14.1.0"
