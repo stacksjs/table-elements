@@ -10,6 +10,7 @@ specifiers:
   '@headlessui/vue': ^1.6.2
   '@iconify-json/heroicons-outline': ^1.1.1
   '@iconify-json/heroicons-solid': ^1.1.1
+  '@ow3/table-vue': 0.0.6
   '@types/node': ^17.0.31
   '@unocss/preset-icons': ^0.34.1
   '@unocss/preset-wind': ^0.34.1
@@ -23,7 +24,6 @@ specifiers:
   eslint-plugin-cypress: ^2.12.1
   inquirer: ^8.2.4
   lint-staged: ^12.4.2
-  meilisearch: ^0.25.1
   minimist: ^1.2.6
   prompts: ^2.4.2
   simple-git-hooks: ^2.7.0
@@ -39,13 +39,13 @@ specifiers:
   vue-tsc: ^0.34.16
 
 dependencies:
-  meilisearch: 0.25.1
+  '@ow3/table-vue': 0.0.6_vue@3.2.36
   vue: 3.2.36
 
 devDependencies:
   '@antfu/eslint-config': 0.24.2_xztl6dhthcahlo6akmb2bmjmle
   '@babel/types': 7.18.0
-  '@commitlint/cli': 17.0.0
+  '@commitlint/cli': 17.0.1
   '@commitlint/config-conventional': 17.0.0
   '@commitlint/cz-commitlint': 17.0.0_nlwf7yf5555jiq2ch63nbqq5xy
   '@commitlint/types': 17.0.0
@@ -226,8 +226,8 @@ packages:
       '@babel/helper-validator-identifier': 7.16.7
       to-fast-properties: 2.0.0
 
-  /@commitlint/cli/17.0.0:
-    resolution: {integrity: sha512-Np6slCdVVG1XwMvwbZrXIzS1INPAD5QmN4L6al04AmCd4nAPU63gxgxC5Mz0Fmx7va23Uvb0S7yEFV1JPhvPUQ==}
+  /@commitlint/cli/17.0.1:
+    resolution: {integrity: sha512-5xT1G5pnynR0tk/ms8Ji7yr9lZCeQs4GLVVtyK/gw20w+enoLTVuRKKY9zg88hy9FoCycc/W8iip2xv3c8payg==}
     engines: {node: '>=v14'}
     hasBin: true
     dependencies:
@@ -236,6 +236,7 @@ packages:
       '@commitlint/load': 17.0.0
       '@commitlint/read': 17.0.0
       '@commitlint/types': 17.0.0
+      execa: 5.1.1
       lodash: 4.17.21
       resolve-from: 5.0.0
       resolve-global: 1.0.0
@@ -533,6 +534,23 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
     dev: true
+
+  /@ow3/table-vue/0.0.6_vue@3.2.36:
+    resolution: {integrity: sha512-NAMo7xurOVMghlXSSWzq7T8PsH8khaXG7eV5w1sEM2nIavU7nS1OP2S6i4v4BUXpYxKwmluktPzt/v1+29XddQ==}
+    engines: {node: '>=v18.0.0', pnpm: '>=7.1.5'}
+    peerDependencies:
+      '@vue/composition-api': ^1.6.2
+      vue: ^2.0.0 || >=3.0.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      meilisearch: 0.25.1
+      vue: 3.2.36
+      vue-demi: 0.12.5_vue@3.2.36
+    transitivePeerDependencies:
+      - encoding
+    dev: false
 
   /@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
@@ -5301,7 +5319,6 @@ packages:
         optional: true
     dependencies:
       vue: 3.2.36
-    dev: true
 
   /vue-eslint-parser/9.0.2_eslint@8.16.0:
     resolution: {integrity: sha512-uCPQwTGjOtAYrwnU+76pYxalhjsh7iFBsHwBqDHiOPTxtICDaraO4Szw54WFTNZTAEsgHHzqFOu1mmnBOBRzDA==}
