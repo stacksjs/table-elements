@@ -1,5 +1,18 @@
 {
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "prettier.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "windicss.sortOnSave": true,
+  "windicss.enableCodeFolding": false,
   "cSpell.words": [
+    "openweblabs",
+    "openweb",
     "meema",
     "meemalabs",
     "pnpm",
@@ -16,10 +29,25 @@
     "antfu",
     "vitebook",
     "heroicon",
-    "composables"
-  ],
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
+    "heroicons",
+    "booleanish",
+    "composables",
+    "preinstall",
+    "commitlint",
+    "commitlintrc",
+    "upath",
+    "bumpp",
+    "unocss",
+    "semibold",
+    "meilisearch",
+    "typecheck",
+    "iconify",
+    "laravel",
+    "unref",
+    "typesense",
+    "headlessui",
+    "nums",
+    "focusring",
+    "textareas"
+  ]
 }

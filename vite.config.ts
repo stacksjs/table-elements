@@ -1,7 +1,8 @@
-/// <reference types="vitest" />
 import { resolve } from 'path'
 import type { UserConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
+import Unocss from 'unocss/vite'
+import PresetIcons from '@unocss/preset-icons'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import pkg from './package.json'
@@ -20,13 +21,25 @@ const config: UserConfig = {
 
   plugins: [
     Vue({
-      reactivityTransform: true, // https://vuejs.org/guide/extras/reactivity-transform.html
       template: {
         compilerOptions: {
           // treat all tags with a dash as custom elements
           isCustomElement: tag => tag.includes('-'),
         },
       },
+    }),
+
+    Unocss({
+      mode: 'vue-scoped',
+      presets: [
+        PresetIcons({
+          prefix: 'i-',
+          extraProperties: {
+            'display': 'inline-block',
+            'vertical-align': 'middle',
+          },
+        }),
+      ],
     }),
 
     // https://github.com/antfu/unplugin-auto-import
@@ -50,7 +63,7 @@ const config: UserConfig = {
     include: ['tests/**/*.test.ts'],
     environment: 'jsdom',
     deps: {
-      inline: ['@vue', '@vueuse', 'vue-demi'],
+      inline: ['@vue', '@vueuse'],
     },
   },
 }
