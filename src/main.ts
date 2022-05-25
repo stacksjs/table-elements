@@ -1,12 +1,14 @@
 import { defineCustomElement } from 'vue'
-import Table from './components/TableV2.ce.vue'
+import HelloWorld from './components/HelloWorld.ce.vue'
+
+// console.log('HelloWorld.styles', HelloWorld.styles) // ["/* inlined css */"]
 
 // convert into custom element constructor
-const TableCustomElement = defineCustomElement(Table)
+const HelloWorldCustomElement = defineCustomElement(HelloWorld)
 
 // export individual elements
-// export { TableCustomElement, TableConfigureCustomElement };
+// export { HelloWorldCustomElement, AnotherCustomElement };
 
 // export function register() {
-customElements.define('table-v2', TableCustomElement)
+customElements.define('hello-world', HelloWorldCustomElement)
 // }

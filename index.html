@@ -2,50 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/.github/art/logo.svg" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="icon" href=".github/art/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elements Playground</title>
   </head>
   <body>
-    <Suspense>
-    <table-v2
-      source="http://3.85.80.143:7700"
-      password="NtUvZv5Q87e355b807622149c350ac38679645b4e2603a1d3eb48cda080f977e76329aeb"
-      type="orders"
-      columns="
-        id: Order,
-        customer_name: Customer,
-        customer_po: PO#,
-        part_name: Parts,
-        created_at: Ordered,
-        due_at: Due,
-        stage_name: Status"
-      sort="id:desc"
-      sorts="created_at, customer_name, customer_po, due_at, id, part_name, stage_name"
-      filters="
-        created_at: date-range,
-        customer_name: multi-select,
-        customer_po: multi-select,
-        document_types: multi-select,
-        due_at: date-range,
-        id: multi-select,
-        invoice_number: multi-select,
-        part_name: multi-select,
-        stage_name: multi-select,
-        vendor_name: multi-select"
-      actions="Info"
-      per-page="10"
-      selectable="true"
-    >
-      <!-- <template #part_name="partNameProps">
-        <div v-for="(part, x) in partNameProps.value" :key="x" class="text-yellow-600">
-          {{ part }}
-        </div>
-      </template> -->
-    </table-v2>
-  </Suspense>
-
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="./src/main.ts"></script>
+    <hello-world message="Welcome, friend!"></hello-world>
   </body>
 </html>

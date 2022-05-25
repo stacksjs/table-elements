@@ -1,106 +1,81 @@
 {
-  "name": "@ow3/table-elements",
-  "version": "0.0.1",
-  "description": "The easy & modern way to work with tables. Facet filtering, searching, pagination, ...",
+  "name": "web-components-library-starter",
+  "version": "0.7.1",
+  "packageManager": "pnpm@7.1.5",
+  "description": "The most simple way to create a cross-framework component library. Using Web Components, to be understood by all.",
   "keywords": [
-    "tables",
-    "filters",
-    "pagination",
-    "sorting",
-    "search",
+    "web-components",
     "component",
     "library",
     "vue",
     "typescript",
     "javascript"
   ],
-  "bugs": {
-    "url": "https://github.com/openweblabs/table-elements/issues"
-  },
   "license": "MIT",
-  "author": "Open Web Labs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openweblabs/table-elements.git"
+    "url": "https://github.com/openweblabs/web-components-library-starter.git"
   },
-  "contributors": [
-    "Chris Breuer <chris@ow3.org>"
-  ],
-  "main": "./dist/table-elements.umd.js",
-  "module": "./dist/table-elements.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/table-elements.es.js",
-      "require": "./dist/table-elements.umd.js"
-    }
-  },
-  "typings": "./dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
   "scripts": {
-    "build": "vite build",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "commit": "git-cz",
-    "coverage": "vitest run --coverage",
     "dev": "vite dev --open --port 3333",
-    "preinstall": "node .scripts/check-for-pnpm.mjs && node .scripts/check-node-version.mjs",
+    "build": "vite build",
+    "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "preview": "vite preview",
-    "release": "npx bumpp package.json --execute 'pnpm run changelog' --commit 'chore(release): %s' --tag --push --all && npm publish",
     "test": "vitest",
-    "test:e2e": "cypress open",
     "test:unit": "vitest",
-    "typecheck": "vue-tsc --emitDeclarationOnly"
+    "test:e2e": "cypress open",
+    "coverage": "vitest run --coverage",
+    "typecheck": "vue-tsc --noEmit",
+    "preinstall": "node ./.scripts/check-for-pnpm.js && node ./.scripts/check-node-version.mjs",
+    "commit": "git-cz",
+    "release": "npx bumpp package.json --execute 'pnpm run changelog' --commit 'chore(release): %s' --tag --push --all",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "dependencies": {
+    "@ow3/table-vue": "^0.0.7",
+    "@vueuse/core": "8.5.0",
+    "vue": "3.2.36"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "0.24.2",
+    "@babel/types": "7.18.0",
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
+    "@commitlint/cz-commitlint": "^17.0.0",
+    "@iconify-json/heroicons-outline": "^1.1.1",
+    "@iconify-json/heroicons-solid": "^1.1.1",
+    "@types/node": "^17.0.31",
+    "@unocss/preset-icons": "^0.34.1",
+    "@vitejs/plugin-vue": "2.3.3",
+    "@vue/compiler-sfc": "3.2.36",
+    "bumpp": "^7.1.1",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.2.2",
+    "cypress": "9.7.0",
+    "eslint": "8.16.0",
+    "eslint-plugin-cypress": "2.12.1",
+    "inquirer": "^8.2.4",
+    "jsdom": "^19.0.0",
+    "lint-staged": "^12.4.2",
+    "minimist": "^1.2.6",
+    "simple-git-hooks": "^2.7.0",
+    "sort-package-json": "^1.57.0",
+    "typescript": "4.7.2",
+    "unocss": "^0.34.1",
+    "unplugin-auto-import": "0.8.4",
+    "unplugin-vue-components": "0.19.5",
+    "upath": "^2.0.1",
+    "vite": "2.9.9",
+    "vitest": "0.12.9",
+    "vue-tsc": "0.34.16"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
     "commit-msg": "npx commitlint --config ./commitlint.config.ts --edit $1"
   },
-  "dependencies": {
-    "@ow3/table-vue": "0.0.6",
-    "vue": "^3.2.36"
-  },
-  "devDependencies": {
-    "@antfu/eslint-config": "^0.24.1",
-    "@babel/types": "^7.18.0",
-    "@commitlint/cli": "^17.0.0",
-    "@commitlint/config-conventional": "^17.0.0",
-    "@commitlint/cz-commitlint": "^17.0.0",
-    "@commitlint/types": "^17.0.0",
-    "@headlessui/vue": "^1.6.2",
-    "@iconify-json/heroicons-outline": "^1.1.1",
-    "@iconify-json/heroicons-solid": "^1.1.1",
-    "@types/node": "^17.0.31",
-    "@unocss/preset-icons": "^0.34.1",
-    "@unocss/preset-wind": "^0.34.1",
-    "@vitejs/plugin-vue": "^2.3.3",
-    "@vue/compiler-sfc": "^3.2.36",
-    "@vueuse/core": "^8.5.0",
-    "bumpp": "^7.1.1",
-    "commitizen": "^4.2.4",
-    "conventional-changelog-cli": "^2.2.2",
-    "eslint": "^8.16.0",
-    "eslint-plugin-cypress": "^2.12.1",
-    "inquirer": "^8.2.4",
-    "lint-staged": "^12.4.2",
-    "minimist": "^1.2.6",
-    "prompts": "^2.4.2",
-    "simple-git-hooks": "^2.7.0",
-    "sort-package-json": "^1.57.0",
-    "typescript": "^4.7.2",
-    "unocss": "^0.34.1",
-    "unplugin-auto-import": "^0.8.4",
-    "unplugin-vue-components": "^0.19.5",
-    "upath": "^2.0.1",
-    "vite": "^2.9.9",
-    "vitest": "^0.12.9",
-    "vue-tsc": "^0.34.16"
-  },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,vue}": "eslint --fix",
+    "*.{js,jsx,ts,tsx,vue}": "eslint . --fix",
     "package.json": "sort-package-json"
   },
   "config": {
@@ -109,7 +84,13 @@
     }
   },
   "engines": {
-    "node": ">=v18.0.0",
+    "node": ">=v16.15.0",
     "pnpm": ">=7.1.5"
+  },
+  "contributors": [
+    "Chris Breuer <chris@ow3.org>"
+  ],
+  "bugs": {
+    "url": "https://github.com/openweblabs/web-components-library-starter/issues"
   }
 }

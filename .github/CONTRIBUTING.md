@@ -1,6 +1,6 @@
 # Contributing
 
-First off, thank you for taking the time to contribute to Meema Labs ❤️
+First off, thank you for taking the time to contribute to Open Web ❤️
 
 ## 💭 Knowledge
 
@@ -39,7 +39,7 @@ right corner. After the project has been forked, run the following commands in y
 # Replace {github-username} with your GitHub username.
 $: git clone https://github.com/{github-username}/table-elements --depth=1
 
-$: cd table-elements
+$: cd web-components-library-starter
 
 # Create a branch for your PR, replace {issue-no} with the GitHub issue number.
 $: git checkout -b issue-{issue-no}
@@ -70,10 +70,7 @@ Each of our Web Components comes with test cases. Feel free to check them out wi
 
 ### Visual
 
-This project uses [Vitebook][vitebook] to render components and view them in the browser. Simply
-create a `*.stories.ts` file within the `./stories` root folder and run `yarn vitebook` in
-your terminal. To learn more about writing stories follow the link to the vitebook site, and see
-other stories in the project.
+We are currently exploring to utilize Histoire for this.
 
 ## ✍️ Commit
 
@@ -85,7 +82,7 @@ Simply refer to the link, and also see existing commits to get an idea of how to
 $: git add .
 
 # Commit changes.
-$: git commit -m 'your commit message'
+$: pnpm run commit
 
 # Push changes up to GitHub.
 $: git push
@@ -101,7 +98,6 @@ vet it and see if it should be merged. Please don't be disheartened if it's not 
 contribution is appreciated more than you can imagine, and even a failed PR can teach us a lot ❤️
 
 [typescript]: https://www.typescriptlang.org
-[vitebook]: https://vitebook.dev/
 [vue]: https://v3.vuejs.org/
 [web-components]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
 [table-elements]: https://github.com/meemalabs/table-elements

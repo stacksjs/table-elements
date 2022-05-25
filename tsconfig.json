@@ -5,9 +5,6 @@
     "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
-    "composite": false,
-    "incremental": false,
-    "declaration": false, // temporary disabled until this is merged: https://github.com/vuejs/core/pull/5831
     "sourceMap": true,
     "resolveJsonModule": true,
     "importHelpers": true,
@@ -16,14 +13,12 @@
     "allowJs": true,
     "esModuleInterop": true,
     "noUnusedLocals": true,
-    "suppressImplicitAnyIndexErrors": true, // TODO: look into removing this
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
-    "outDir": "dist",
     "types": [
       "vite/client",
-      "vue/macros-global",
+      "vue/ref-macros",
       "node"
     ],
     "paths": {

@@ -1,10 +1,11 @@
+/// <reference types="vitest" />
 import { resolve } from 'path'
 import type { UserConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import Unocss from 'unocss/vite'
-import PresetIcons from '@unocss/preset-icons'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import Unocss from 'unocss/vite'
+import PresetIcons from '@unocss/preset-icons'
 import pkg from './package.json'
 
 process.env.VITE_APP_VERSION = pkg.version
@@ -30,7 +31,7 @@ const config: UserConfig = {
     }),
 
     Unocss({
-      mode: 'vue-scoped',
+      mode: 'shadow-dom',
       presets: [
         PresetIcons({
           prefix: 'i-',
@@ -63,7 +64,7 @@ const config: UserConfig = {
     include: ['tests/**/*.test.ts'],
     environment: 'jsdom',
     deps: {
-      inline: ['@vue', '@vueuse'],
+      inline: ['@vue', '@vueuse', 'vue-demi'],
     },
   },
 }
