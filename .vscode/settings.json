@@ -8,10 +8,6 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "html.customData": [
-    "./.vscode/vscode.html-data.json"
-  ],
-  "css.customData": [],
   "windicss.sortOnSave": true,
   "cSpell.words": [
     "openweblabs",
@@ -32,6 +28,7 @@
     "antfu",
     "vitebook",
     "heroicon",
+    "heroicons",
     "booleanish",
     "composables",
     "preinstall",
@@ -40,8 +37,16 @@
     "upath",
     "bumpp",
     "unocss",
+    "semibold",
+    "meilisearch",
     "typecheck",
     "iconify",
-    "heroicons"
+    "laravel",
+    "unref",
+    "typesense",
+    "headlessui",
+    "nums",
+    "focusring",
+    "textareas"
   ]
 }
