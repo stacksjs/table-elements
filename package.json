@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@ow3/table-vue": "^0.0.8",
-    "@vueuse/core": "8.5.0",
+    "@vueuse/core": "9.13.0",
     "vue": "3.2.36"
   },
   "devDependencies": {
