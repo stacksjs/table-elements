@@ -63,7 +63,7 @@
     "eslint": "8.16.0",
     "eslint-plugin-cypress": "2.12.1",
     "inquirer": "^8.2.4",
-    "jsdom": "^19.0.0",
+    "jsdom": "^22.1.0",
     "lint-staged": "^12.4.2",
     "minimist": "^1.2.6",
     "simple-git-hooks": "^2.7.0",
