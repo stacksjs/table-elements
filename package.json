@@ -1,7 +1,7 @@
 {
   "name": "table-elements",
   "version": "0.0.0",
-  "packageManager": "pnpm@7.1.5",
+  "packageManager": "pnpm@7.33.5",
   "description": "The most simple way to create a cross-framework component library. Using Web Components, to be understood by all.",
   "license": "MIT",
   "repository": {
@@ -20,8 +20,8 @@
     "javascript"
   ],
   "engines": {
-    "node": ">=v16.15.0",
-    "pnpm": ">=7.1.5"
+    "node": ">=v16.20.1",
+    "pnpm": ">=7.33.5"
   },
   "scripts": {
     "dev": "vite dev --open --port 3333",
@@ -40,42 +40,42 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
-    "@ow3/table-vue": "^0.0.8",
-    "@vueuse/core": "8.5.0",
-    "vue": "3.2.36"
+    "@ow3/table-vue": "^0.0.11",
+    "@vueuse/core": "8.9.4",
+    "vue": "3.3.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.24.2",
-    "@babel/types": "7.18.2",
-    "@commitlint/cli": "^17.0.1",
-    "@commitlint/config-conventional": "^17.0.0",
-    "@commitlint/cz-commitlint": "^17.0.0",
-    "@iconify-json/heroicons-outline": "^1.1.1",
-    "@iconify-json/heroicons-solid": "^1.1.1",
-    "@types/node": "^17.0.31",
-    "@unocss/preset-icons": "^0.34.1",
-    "@vitejs/plugin-vue": "2.3.3",
-    "@vue/compiler-sfc": "3.2.36",
-    "bumpp": "^7.1.1",
-    "commitizen": "^4.2.4",
+    "@antfu/eslint-config": "0.40.0",
+    "@babel/types": "7.22.5",
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
+    "@commitlint/cz-commitlint": "^17.6.7",
+    "@iconify-json/heroicons-outline": "^1.1.6",
+    "@iconify-json/heroicons-solid": "^1.1.7",
+    "@types/node": "^17.0.45",
+    "@unocss/preset-icons": "^0.54.1",
+    "@vitejs/plugin-vue": "2.3.4",
+    "@vue/compiler-sfc": "3.3.4",
+    "bumpp": "^7.2.0",
+    "commitizen": "^4.3.0",
     "conventional-changelog-cli": "^2.2.2",
     "cypress": "9.7.0",
-    "eslint": "8.16.0",
-    "eslint-plugin-cypress": "2.12.1",
-    "inquirer": "^8.2.4",
+    "eslint": "8.46.0",
+    "eslint-plugin-cypress": "2.13.3",
+    "inquirer": "^8.2.6",
     "jsdom": "^19.0.0",
-    "lint-staged": "^12.4.2",
-    "minimist": "^1.2.6",
-    "simple-git-hooks": "^2.7.0",
+    "lint-staged": "^12.5.0",
+    "minimist": "^1.2.8",
+    "simple-git-hooks": "^2.9.0",
     "sort-package-json": "^1.57.0",
-    "typescript": "4.7.2",
-    "unocss": "^0.34.1",
-    "unplugin-auto-import": "0.8.5",
-    "unplugin-vue-components": "0.19.5",
+    "typescript": "4.9.5",
+    "unocss": "^0.54.1",
+    "unplugin-auto-import": "0.16.6",
+    "unplugin-vue-components": "0.25.1",
     "upath": "^2.0.1",
-    "vite": "2.9.9",
-    "vitest": "0.12.9",
-    "vue-tsc": "0.34.16"
+    "vite": "2.9.16",
+    "vitest": "0.34.1",
+    "vue-tsc": "0.40.13"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
